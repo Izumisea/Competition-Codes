@@ -1,0 +1,36 @@
+/*
+Paul Khristian Marasigan
+
+ Wiring Connections:
+ gizDuinoPLUS MCU ===> BeefyMotorDriver
+            GND   ===> GND
+            RESET ===> RESET
+            +5V   ===> SR
+             D3   ===> PH
+             +5V  ===> PWL
+     PWM PIN/D4   ===> PWH
+ 
+
+ 
+ */
+int PH_PIN_RIGHT = 3; // Direction pin
+int PWH_PIN_RIGHT = 4; // Speed control/PWM pin
+int PH_PIN_LEFT = 5; // Direction pin
+int PWH_PIN_LEFT = 6; // Speed control/PWM pin
+
+void setup(){
+  pinMode(PH_PIN_RIGHT, OUTPUT);
+  pinMode(PWH_PIN_RIGHT, OUTPUT);
+  pinMode(PH_PIN_LEFT, OUTPUT);
+  pinMode(PWH_PIN_LEFT, OUTPUT);
+
+
+}
+void loop(){
+  digitalWrite(PH_PIN_RIGHT, HIGH);
+  analogWrite(PWH_PIN_RIGHT, 180);
+  digitalWrite(PH_PIN_LEFT, HIGH);
+  analogWrite(PWH_PIN_LEFT, 180);
+}
+
+
